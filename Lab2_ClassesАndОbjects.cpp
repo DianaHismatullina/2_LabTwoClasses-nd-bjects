@@ -1,5 +1,3 @@
-// Lab2_ClassesАndОbjects.cpp : Defines the entry point for the console application.
-//
 
 #include "stdafx.h"
 #include <tchar.h>
@@ -26,7 +24,7 @@ class Co_worker
 				salary = sal;
 				hours = h;
 			}
-			Co_worker (char name[], double sal, char pos[], double h) // Конструктор для инициализации полей
+			Co_worker (char name[], double sal, char pos[], double h) 
 			{
 				strcpy_s(full_name, name);
 				strcpy_s(position, pos);
@@ -64,8 +62,8 @@ int main()
 	char name[128], pos[128];
 	double h, sal, sumsalary = 0, sumhours = 0;
 
-	Co_worker **ppW; // Указатель на массив указателей
-	ppW = new Co_worker*[n]; // Создаем массив указателей
+	Co_worker **ppW; 
+	ppW = new Co_worker*[n]; 
 	for (int i = 0; i<n; i++)
 	{
 		cout << "\nObject N = " << (i + 1);
@@ -75,11 +73,11 @@ int main()
 		cout << "Hours: "; cin >> h;
 
 	
-		ppW[i] = new Co_worker(name, sal, pos, h); // Создание объекта динамически
+		ppW[i] = new Co_worker(name, sal, pos, h);
 								
 	}
 	
-	for (int i = 0; i<n; i++) ppW[i]->print(); // Цикл печати полей для объектов
+	for (int i = 0; i<n; i++) ppW[i]->print(); 
 	for (int i = 0; i<n; i++) sumsalary += ppW[i]->salarypert(T);
 	for (int i = 0; i<n; i++) sumhours += ppW[i]->hoursypert(T);
 
